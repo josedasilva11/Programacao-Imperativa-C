@@ -31,6 +31,135 @@ int a, b, c; // Declaração múltipla
 - Ocupa 1 byte de memória.
 - Pode armazenar valores inteiros entre -128 e 127 (para signed char) ou entre 0 e 255 (para unsigned char).
 
+```c
+#include <stdio.h>
+
+int main() {
+    char c = 'A'; // Representa o caractere 'A'
+    unsigned char uc = 255; // Máximo valor para unsigned char
+
+    printf("Caractere: %c\n", c);
+    printf("Valor unsigned char: %u\n", uc);
+    return 0;
+}
+```
+
+### short
+- Inteiro curto.
+- Ocupa pelo menos 2 bytes de memória.
+- Pode armazenar valores entre -32,768 e 32,767 (para short) ou entre 0 e 65,535 (para unsigned short).
+
+```c
+#include <stdio.h>
+
+int main() {
+    short s = 32767; // Máximo valor para short
+    unsigned short us = 65535; // Máximo valor para unsigned short
+
+    printf("Valor short: %d\n", s);
+    printf("Valor unsigned short: %u\n", us);
+    return 0;
+}
+
+```
+
+
+### int 
+
+- Inteiro padrão.
+- Ocupa pelo menos 2 bytes de memória, geralmente 4 bytes.
+- Pode armazenar valores entre -2,147,483,648 e 2,147,483,647 (para int) ou entre 0 e 4,294,967,295 (para unsigned int).
+
+
+
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 2147483647; // Máximo valor para int
+    unsigned int ui = 4294967295; // Máximo valor para unsigned int
+
+    printf("Valor int: %d\n", i);
+    printf("Valor unsigned int: %u\n", ui);
+    return 0;
+}
+
+```
+
+
+### long 
+- Inteiro longo.
+- Ocupa pelo menos 4 bytes de memória.
+- Pode armazenar valores entre -2,147,483,648 e 2,147,483,647 (para long) ou entre 0 e 4,294,967,295 (para unsigned long).
+
+
+
+```c
+
+#include <stdio.h>
+
+int main() {
+    long l = 2147483647; // Máximo valor para long
+    unsigned long ul = 4294967295; // Máximo valor para unsigned long
+
+    printf("Valor long: %ld\n", l);
+    printf("Valor unsigned long: %lu\n", ul);
+    return 0;
+}
+```
+
+### float 
+
+- Ponto flutuante de precisão simples.
+- Ocupa 4 bytes de memória.
+- Pode armazenar números com ponto flutuante entre aproximadamente 1.2E-38 e 3.4E+38.
+
+```c
+#include <stdio.h>
+
+int main() {
+    float f = 3.14f; // Valor de ponto flutuante
+
+    printf("Valor float: %f\n", f);
+    return 0;
+}
+
+```
+
+### double 
+
+- Ponto flutuante de precisão dupla.
+- Ocupa 8 bytes de memória.
+- Pode armazenar números com ponto flutuante entre aproximadamente 2.3E-308 e 1.7E+308.
+
+```c
+#include <stdio.h>
+
+int main() {
+    double d = 3.141592653589793; // Valor de ponto flutuante de precisão dupla
+
+    printf("Valor double: %lf\n", d);
+    return 0;
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Funções
 

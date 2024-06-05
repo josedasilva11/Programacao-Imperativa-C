@@ -26,12 +26,11 @@ int a, b, c; // Declaração múltipla
 
 ## Os principais tipos numéricos em C incluem:
 
-- 'char': Representa um caractere.
-- 'short': Inteiro curto.
-- 'int': Inteiro padrão.
-- 'long': Inteiro longo.
-- 'float': Ponto flutuante de precisão simples.
-- 'double': Ponto flutuante de precisão dupla.
+### char
+- Representa um caractere.
+- Ocupa 1 byte de memória.
+- Pode armazenar valores inteiros entre -128 e 127 (para signed char) ou entre 0 e 255 (para unsigned char).
+
 
 ## Funções
 

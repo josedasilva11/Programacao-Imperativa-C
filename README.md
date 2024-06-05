@@ -163,9 +163,34 @@ int main() {
 
 ## Funções
 
-As funções em C são definidas para modularizar o código. Uma função deve ser declarada e definida com seus parâmetros e tipo de retorno.
+### Definição e Declaração
+
+As funções são blocos de código que executam uma tarefa específica e podem ser reutilizadas. Uma função deve ser declarada antes de ser usada e definida com seu corpo de código.
+
+#### Declaração
+A declaração de uma função informa ao compilador sobre a função, seu nome, tipo de retorno e parâmetros.
 
 ```c
+int soma(int a, int b); // Declaração
+```
+
+#### Definição
+A definição de uma função inclui a implementação da função.
+
+```c
+int soma(int a, int b) { // Definição
+    return a + b;
+}
+
+```
+
+
+Exemplo completo:
+
+```c
+
+#include <stdio.h>
+
 int soma(int a, int b); // Declaração
 
 int soma(int a, int b) { // Definição
@@ -178,20 +203,223 @@ int main() {
     return 0;
 }
 ```
-## Comandos vs. Expressões
 
-- Comandos: Alteram o estado do programa (e.g., atribuição).
-- Expressões: Denotam valores e podem ser usadas em comandos.
+### Passagem de Argumentos
+Em C, os argumentos podem ser passados por valor ou por referência (usando ponteiros).
+
+#### Passagem por Valor
+Os valores dos argumentos são copiados para os parâmetros da função.
 
 ```c
-int x = 5; // Comando
-int y = 3 + 4; // Expressão
+int soma(int a, int b) {
+    return a + b;
+}
+
+```
+#### Passagem por Referência
+Os endereços dos argumentos são passados para a função, permitindo a modificação dos valores originais.
+
+```c
+void incrementa(int *a) {
+    (*a)++;
+}
+
+int main() {
+    int x = 5;
+    incrementa(&x);
+    printf("x incrementado: %d\n", x);
+    return 0;
+}
 
 ```
 
+## Comandos vs. Expressões
+### Comandos
+Comandos são instruções que alteram o estado do programa. Exemplos incluem atribuições, chamadas de funções, laços e condicionais.
+```c
+int x = 5; // Comando de atribuição
+
+```
+
+### Expressões
+Expressões são combinações de valores, variáveis e operadores que produzem um valor. Elas podem ser usadas dentro de comandos.
+
+```c
+int y = 3 + 4; // 3 + 4 é uma expressão
+int z = x * y; // x * y é uma expressão
+
+```
+
+
 ## Operadores Aritméticos
 
-Os operadores básicos incluem +, -, *, /, %.
+Os operadores aritméticos básicos em C são:
+
+- + (adição)
+- - (subtração)
+- * (multiplicação)
+- / (divisão)
+- % (módulo)
+
+```c
+
+int a = 10, b = 3;
+int soma = a + b;      // Soma: 13
+int subtracao = a - b; // Subtração: 7
+int produto = a * b;   // Produto: 30
+int quociente = a / b; // Quociente: 3
+int resto = a % b;
+```
+
+### Outros Operadores
+Além dos operadores aritméticos básicos, C possui outros operadores importantes:
+
+#### Operadores Relacionais
+Usados para comparar valores.
+
+- == (igual a)
+- != (diferente de)
+- > (maior que)
+- < (menor que)
+- >= (maior ou igual a)
+- <= (menor ou igual a)
+
+```c
+int a = 10, b = 5;
+int resultado;
+
+resultado = (a == b);  // Falso (0)
+resultado = (a != b);  // Verdadeiro (1)
+resultado = (a > b);   // Verdadeiro (1)
+resultado = (a < b);   // Falso (0)
+resultado = (a >= b);  // Verdadeiro (1)
+resultado = (a <= b);  // Falso (0)
+
+```
+#### Operadores Lógicos
+
+Usados para combinar expressões booleanas.
+
+- && (E lógico)
+- || (OU lógico)
+- ! (NÃO lógico)
+
+```c
+int a = 1, b = 0;
+int resultado;
+
+resultado = (a && b); // Falso (0)
+resultado = (a || b); // Verdadeiro (1)
+resultado = !a;       // Falso (0)
+
+```
+#### Operadores de Atribuição
+Usados para atribuir valores a variáveis.
+
+- = (atribuição)
+- += (adição e atribuição)
+- -= (subtração e atribuição)
+- *= (multiplicação e atribuição)
+- /= (divisão e atribuição)
+- %= (módulo e atribuição)
+
+```c
+int a = 10;
+a += 5; // a agora é 15
+a -= 3; // a agora é 12
+a *= 2; // a agora é 24
+a /= 4; // a agora é 6
+a %= 3; // a agora é 0
+
+```
+
+#### Operadores Bitwise
+Usados para operações em nível de bits.
+
+- & (E bit a bit)
+- | (OU bit a bit)
+- ^ (OU exclusivo bit a bit)
+- ~ (NÃO bit a bit)
+- << (deslocamento à esquerda)
+- >> (deslocamento à direita)
+
+```c
+int a = 5;    // 0101 em binário
+int b = 3;    // 0011 em binário
+int resultado;
+
+resultado = a & b;  // 0001 (1 em decimal)
+resultado = a | b;  // 0111 (7 em decimal)
+resultado = a ^ b;  // 0110 (6 em decimal)
+resultado = ~a;     // 1010 (em binário, -6 em decimal para sistemas de 4 bits)
+resultado = a << 1; // 1010 (10 em decimal)
+resultado = a >> 1; // 0010 (2 em decimal)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Estruturas de Controle
 

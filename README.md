@@ -1044,4 +1044,83 @@ Explicação
 - Comparação: O elemento central é comparado com o elemento buscado.
 - Redução do Espaço de Busca: Se o elemento central não é o buscado, o algoritmo continua a busca na metade relevante do array.
 
+## O que é uma Árvore Binária?
 
+Uma árvore binária é uma estrutura de dados hierárquica na qual cada nó tem, no máximo, dois filhos. Esses filhos são chamados de filho esquerdo e filho direito. As árvores binárias são usadas em muitos algoritmos importantes e são fundamentais em estruturas de dados como árvores de busca binária, árvores AVL, árvores vermelho-preto, entre outras.
+
+### Componentes de uma Árvore Binária
+- Nó: A unidade básica de uma árvore que contém um valor (ou dados) e referências para seus filhos.
+- Raiz (Root): O nó superior da árvore. É o ponto de entrada para qualquer operação na árvore.
+- Filhos (Children): Os nós diretamente conectados a outro nó quando movemos um nível para baixo.
+- Folhas (Leaves): Nós que não possuem filhos (filhos esquerdo e direito são NULL).
+- Subárvore: Qualquer nó e todos os seus descendentes.
+- Estrutura de Dados em C para Árvore Binária
+
+Aqui está uma definição típica de uma árvore binária em C:
+
+```c
+typedef struct ABin_nodo {
+    int valor;
+    struct ABin_nodo *esq, *dir;
+} *ABin;
+
+
+```
+
+### Operações Básicas em Árvores Binárias
+#### 1. Inserção
+Inserir um novo nó na árvore binária de forma que a estrutura da árvore seja mantida.
+
+```c
+ABin inserir(ABin a, int x) {
+    if (a == NULL) {
+        a = (ABin)malloc(sizeof(struct ABin_nodo));
+        a->valor = x;
+        a->esq = NULL;
+        a->dir = NULL;
+    } else if (x < a->valor) {
+        a->esq = inserir(a->esq, x);
+    } else {
+        a->dir = inserir(a->dir, x);
+    }
+    return a;
+}
+
+```
+
+#### 2. Busca
+Procurar um valor na árvore binária.
+```c
+ABin buscar(ABin a, int x) {
+    if (a == NULL || a->valor == x)
+        return a;
+    if (x < a->valor)
+        return buscar(a->esq, x);
+    else
+        return buscar(a->dir, x);
+}
+
+
+```
+
+#### 3. Percursos (Traversals)
+
+
+Existem três tipos principais de percursos em árvores binárias:
+
+- Pré-ordem (Pre-order): Visita a raiz, depois a subárvore esquerda, depois a subárvore direita.
+- Em-ordem (In-order): Visita a subárvore esquerda, depois a raiz, depois a subárvore direita.
+- Pós-ordem (Post-order): Visita a subárvore esquerda, depois a subárvore direita, depois a raiz.
+
+Exemplo de percurso em-ordem:
+
+```c
+void inOrder(ABin a) {
+    if (a != NULL) {
+        inOrder(a->esq);
+        printf("%d ", a->valor);
+        inOrder(a->dir);
+    }
+}
+
+```

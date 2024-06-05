@@ -1054,7 +1054,8 @@ Uma árvore binária é uma estrutura de dados hierárquica na qual cada nó tem
 - Filhos (Children): Os nós diretamente conectados a outro nó quando movemos um nível para baixo.
 - Folhas (Leaves): Nós que não possuem filhos (filhos esquerdo e direito são NULL).
 - Subárvore: Qualquer nó e todos os seus descendentes.
-- Estrutura de Dados em C para Árvore Binária
+
+### Estrutura de Dados em C para Árvore Binária
 
 Aqui está uma definição típica de uma árvore binária em C:
 
